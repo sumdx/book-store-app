@@ -5,6 +5,7 @@ public class Book {
     int coverImageResource;
     double price;
     boolean availability;
+    double review;
 
     public Book(String name, String title, String author, String description, int coverImageResource, double price, boolean availability) {
         this.name = name;
@@ -14,6 +15,18 @@ public class Book {
         this.coverImageResource = coverImageResource;
         this.price = price;
         this.availability = availability;
+        this.review = 0;
+    }
+
+    public Book(double review, boolean availability, double price, int coverImageResource, String description, String author, String title, String name) {
+        this.review = review;
+        this.availability = availability;
+        this.price = price;
+        this.coverImageResource = coverImageResource;
+        this.description = description;
+        this.author = author;
+        this.title = title;
+        this.name = name;
     }
 
     public String getName() {
@@ -70,5 +83,13 @@ public class Book {
 
     public void setAvailability(boolean availability) {
         this.availability = availability;
+    }
+
+    public double getReview() {
+        return review;
+    }
+
+    public void setReview(double review) {
+        this.review = review;
     }
 }
