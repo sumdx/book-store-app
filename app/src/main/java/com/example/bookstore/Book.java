@@ -1,40 +1,21 @@
 package com.example.bookstore;
 
 public class Book {
-    String name,title, author, description;
+    String title, author, description;
     int coverImageResource;
     double price;
-    boolean availability;
+    String availability;
     double review;
 
-    public Book(String name, String title, String author, String description, int coverImageResource, double price, boolean availability) {
-        this.name = name;
+
+    public Book(String title, String author, String description, int coverImageResource, double price, String availability, double review) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.coverImageResource = coverImageResource;
         this.price = price;
         this.availability = availability;
-        this.review = 0;
-    }
-
-    public Book(double review, boolean availability, double price, int coverImageResource, String description, String author, String title, String name) {
         this.review = review;
-        this.availability = availability;
-        this.price = price;
-        this.coverImageResource = coverImageResource;
-        this.description = description;
-        this.author = author;
-        this.title = title;
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getTitle() {
@@ -77,11 +58,17 @@ public class Book {
         this.price = price;
     }
 
-    public boolean isAvailability() {
-        return availability;
+    public String getAvailability() {
+        if(availability.equalsIgnoreCase("available") || availability.equalsIgnoreCase("instock") ){
+            return "In Stock";
+        }else {
+
+            return "Not Available";
+        }
+
     }
 
-    public void setAvailability(boolean availability) {
+    public void setAvailability(String availability) {
         this.availability = availability;
     }
 
